@@ -1507,7 +1507,7 @@ MonoBehaviour:
   catLabel: {fileID: 888035579}
   workLabel: {fileID: 27772802}
   foodLabel: {fileID: 154093820}
-  health: {fileID: 592980788}
+  healthLabel: {fileID: 592980788}
 --- !u!1 &1007328393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,6 +2021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 10
+  health: 0
 --- !u!1 &1647968834
 GameObject:
   m_ObjectHideFlags: 0
