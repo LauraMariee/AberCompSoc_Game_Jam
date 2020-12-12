@@ -6,7 +6,8 @@ public class UIController : MonoBehaviour
 {
     public CatController cat;
     public PCController pC;
-    public PlateController plateController; 
+    public PlateController plateController;
+    public EnvironmentController environmentController; 
 
     public Text timerLabel;
     public Text catLabel;
@@ -19,14 +20,9 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime;
-
-        var minutes = time / 60; //Divide the guiTime by sixty to get the minutes.
-        var seconds = time % 60;//Use the euclidean division for the seconds.
-        var fraction = (time * 100) % 100;
 
         //update the label value
-        timerLabel.text = string.Format("{0:00} : {1:00} : {2:000}", minutes, seconds, fraction);
+        timerLabel.text = environmentController.timeRemaining.ToString();
 
         catLabel.text = cat.currentSatisfaction.ToString();
         workLabel.text = pC.currentSatisfaction.ToString();
