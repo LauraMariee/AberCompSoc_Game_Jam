@@ -8,6 +8,7 @@ public class PlateController : MonoBehaviour
     private int minSatisfaction;
     private int maxSatisfaction = 10;
 
+    private float timeRemaining = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,25 @@ public class PlateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+        else
+        {
+            if (currentSatisfaction == 0)
+            {
+                Debug.Log("Reset");
+                timeRemaining = 5;
+            }
+            else
+            {
+                currentSatisfaction--;
+                Debug.Log("Reset");
+                timeRemaining = 5;
+            }
+        }
+
         if (currentSatisfaction == maxSatisfaction)
         {
             UnityEngine.Debug.Log("No more food!"); 
