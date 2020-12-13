@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EnvironmentController : MonoBehaviour
 {
 
-    public float timeRemaining = 120000;
+    public float timeRemaining = 120000000;
     public int health;
 
     // Start is called before the first frame update

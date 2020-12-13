@@ -7,15 +7,17 @@ public class CatController : MonoBehaviour
     public int damage;
 
     public int currentSatisfaction;
-    private int minSatisfaction;
+    private int minSatisfaction = 2;
     private int maxSatisfaction = 10;
 
     private float timeRemaining = 5;
 
+    public EnvironmentController environmentController;
+
     // Start is called before the first frame update
     void Start()
     {
-        currentSatisfaction = 0; //out of 10
+        currentSatisfaction = 4; //out of 10
     }
 
     public void OnMouseDown()
@@ -33,6 +35,12 @@ public class CatController : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
         }
+        else if (currentSatisfaction == minSatisfaction)
+        {
+            environmentController.health--;
+            Debug.Log("Swipe");
+            timeRemaining = 10;
+        }
         else
         {
             if(currentSatisfaction == 0)
@@ -46,13 +54,16 @@ public class CatController : MonoBehaviour
                 Debug.Log("Reset");
                 timeRemaining = 5;
             }
-            
-            
-
         }
         if (currentSatisfaction == maxSatisfaction)
         {
             UnityEngine.Debug.Log("Cat is happy");
+        }
+        if(currentSatisfaction <= minSatisfaction)
+        {
+            Debug.Log("Swipe"); 
+            environmentController.health--;
+            timeRemaining = 5;
         }
     }
 }
