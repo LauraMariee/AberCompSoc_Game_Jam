@@ -35,7 +35,7 @@ public class EnvironmentController : MonoBehaviour
 
     public void LevelEnd()
     {
-        SceneManager.LoadScene("GameOver"); 
+        //SceneManager.LoadScene("GameOver"); 
         UnityEngine.Debug.Log("Game Over");
     }
 }

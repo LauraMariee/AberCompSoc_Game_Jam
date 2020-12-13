@@ -35,17 +35,17 @@ public class CatController : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
         }
-        else if (currentSatisfaction == minSatisfaction)
-        {
-            environmentController.health--;
-            Debug.Log("Swipe");
-            timeRemaining = 10;
-        }
         else
         {
             if(currentSatisfaction == 0)
             {
                 Debug.Log("Reset");
+                timeRemaining = 5;
+            }
+            else if (currentSatisfaction == minSatisfaction)
+            {
+                environmentController.health = environmentController.health - 1;
+                Debug.Log("Swipe");
                 timeRemaining = 5;
             }
             else
@@ -58,12 +58,6 @@ public class CatController : MonoBehaviour
         if (currentSatisfaction == maxSatisfaction)
         {
             UnityEngine.Debug.Log("Cat is happy");
-        }
-        if(currentSatisfaction <= minSatisfaction)
-        {
-            Debug.Log("Swipe"); 
-            environmentController.health--;
-            timeRemaining = 5;
         }
     }
 }
