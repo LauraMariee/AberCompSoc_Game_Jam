@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class UIController : MonoBehaviour
 
     public Text healthLabel;
 
-    private float time;
+    public Button yourButton;
 
     void Update()
     {
@@ -29,6 +30,18 @@ public class UIController : MonoBehaviour
         foodLabel.text = plateController.currentSatisfaction.ToString();
         healthLabel.text = environmentController.health.ToString(); 
     }
+
+
+    public void restart()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void start()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
 
     //check time after a while and end game
 }
