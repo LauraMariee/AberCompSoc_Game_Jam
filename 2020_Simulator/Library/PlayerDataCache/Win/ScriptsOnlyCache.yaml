@@ -1,12 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - CatController
-    - EnvironmentController
-    - PCController
-    - PlateController
-    - UIController
+    - Controller.CatController
+    - Controller.EnvironmentController
+    - Controller.PCController
+    - Controller.PlateController
+    - Controller.UIController
     Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
@@ -315,7 +316,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: ef5fa1547c08d1f3641c1ad5c3d0cb6f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
+    namespaceName: Controller
     className: PCController
   - hash:
       serializedVersion: 2
@@ -385,9 +386,9 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 3866f7acab8628c72db4d7f786c04bc1
+      Hash: 33912b9c7149e50a0710072b373858a0
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
+    namespaceName: Controller
     className: UIController
   - hash:
       serializedVersion: 2
@@ -477,7 +478,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: ef5fa1547c08d1f3641c1ad5c3d0cb6f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
+    namespaceName: Controller
     className: PlateController
   - hash:
       serializedVersion: 2
@@ -519,7 +520,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 5163757e5a0ba41f5e130d58bce2c76c
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
+    namespaceName: Controller
     className: CatController
   - hash:
       serializedVersion: 2
@@ -585,7 +586,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 081a9a416a52e146689954881fbe8e3b
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
+    namespaceName: Controller
     className: EnvironmentController
   - hash:
       serializedVersion: 2
@@ -676,4 +677,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Start.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/Laura/OneDrive/Documents/2020_Simulator.exe
+  playerPath: C:/Users/Laura/Documents/LauraMariee.github.io/2020 sim/2020_Simulator.exe

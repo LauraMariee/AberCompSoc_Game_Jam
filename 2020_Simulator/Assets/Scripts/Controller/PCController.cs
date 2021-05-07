@@ -1,54 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PCController : MonoBehaviour
+namespace Controller
 {
-
-    public int currentSatisfaction;
-    private int minSatisfaction;
-    private int maxSatisfaction = 10;
-
-    private float timeRemaining = 5;
-
-    public void OnMouseDown()
+    public class PCController : MonoBehaviour
     {
-        if (currentSatisfaction < maxSatisfaction)//stop at max 
-        {
-            currentSatisfaction++; //increase satisfaction
-        }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (timeRemaining > 0)
+        public int currentSatisfaction;
+        private int _minSatisfaction;
+        private int _maxSatisfaction = 10;
+
+        private float _timeRemaining = 3;
+
+        public void OnMouseDown()
         {
-            timeRemaining -= Time.deltaTime;
-        }
-        else
-        {
-            if (currentSatisfaction == 0)
+            if (currentSatisfaction < _maxSatisfaction)//stop at max 
             {
-                Debug.Log("Reset");
-                timeRemaining = 5;
+                currentSatisfaction++; //increase satisfaction
+            }
+        }
+
+        // Update is called once per frame
+        private void Update()
+        {
+            if (_timeRemaining > 0)
+            {
+                _timeRemaining -= Time.deltaTime;
             }
             else
             {
-                currentSatisfaction--;
-                Debug.Log("Reset");
-                timeRemaining = 5;
+                if (currentSatisfaction == 0)
+                {
+                    Debug.Log("Reset");
+                    _timeRemaining = 1;
+                }
+                else
+                {
+                    currentSatisfaction--;
+                    Debug.Log("Reset");
+                    _timeRemaining = 1;
+                }
             }
-        }
 
-        if (currentSatisfaction == maxSatisfaction)
-        {
-            UnityEngine.Debug.Log("Work has been done");
+            if (currentSatisfaction == _maxSatisfaction)
+            {
+                UnityEngine.Debug.Log("Work has been done");
+            }
         }
     }
 }

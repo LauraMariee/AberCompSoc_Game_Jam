@@ -1,54 +1,55 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlateController : MonoBehaviour
+namespace Controller
 {
-    public int currentSatisfaction;
-    private int minSatisfaction;
-    private int maxSatisfaction = 10;
-
-    private float timeRemaining = 5;
-
-    // Start is called before the first frame update
-    void Start()
+    public class PlateController : MonoBehaviour
     {
-        currentSatisfaction = 2; //out of 10
-    }
+        public int currentSatisfaction;
+        private int _minSatisfaction;
+        private int _maxSatisfaction = 10;
 
-    public void OnMouseDown()
-    {
-        if (currentSatisfaction < maxSatisfaction)//stop at max 
+        private float _timeRemaining = 1;
+
+        // Start is called before the first frame update
+        private void Start()
         {
-            currentSatisfaction++; //increase satisfaction
+            currentSatisfaction = 3; //out of 10
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (timeRemaining > 0)
+        public void OnMouseDown()
         {
-            timeRemaining -= Time.deltaTime;
-        }
-        else
-        {
-            if (currentSatisfaction == 0)
+            if (currentSatisfaction < _maxSatisfaction)//stop at max 
             {
-                Debug.Log("Reset");
-                timeRemaining = 5;
+                currentSatisfaction++; //increase satisfaction
+            }
+        }
+
+        // Update is called once per frame
+        private void Update()
+        {
+            if (_timeRemaining > 0)
+            {
+                _timeRemaining -= Time.deltaTime;
             }
             else
             {
-                currentSatisfaction--;
-                Debug.Log("Reset");
-                timeRemaining = 5;
+                if (currentSatisfaction == 0)
+                {
+                    Debug.Log("Reset");
+                    _timeRemaining = 2;
+                }
+                else
+                {
+                    currentSatisfaction--;
+                    Debug.Log("Reset");
+                    _timeRemaining = 2;
+                }
             }
-        }
 
-        if (currentSatisfaction == maxSatisfaction)
-        {
-            UnityEngine.Debug.Log("No more food!"); 
+            if (currentSatisfaction == _maxSatisfaction)
+            {
+                UnityEngine.Debug.Log("No more food!"); 
+            }
         }
     }
 }
